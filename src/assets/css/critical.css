@@ -6,153 +6,84 @@
 @media only screen and (min-width: 0rem) {
   #hero {
     z-index: 1;
-    position: relative;
-    /* prevents overflow from the lines extending past the screen width */
     overflow: hidden;
+    background: rgb(0, 60, 121);
+    background: linear-gradient(126deg, rgb(0, 60, 121) 30%, rgb(127, 187, 242) 90%);
+    position: relative;
     /* changes on tablet */
     padding: 0 1rem;
     padding-bottom: 6.25rem;
     font-family: "Roboto", "Arial", sans-serif;
-    /* Centers button */
-    text-align: center;
+    padding: clamp(8em, 22.95vw, 17.5em) 0;
   }
-  #hero .cs-picture {
-    z-index: -2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 100%;
-    /* Background Image */
-    width: 100%;
+  #hero .hero-svg.black {
+    display: none;
   }
-  #hero .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes image act like a background-image */
-    object-fit: cover;
+  #hero .star-space {
+    display: none;
   }
-  #hero .cs-picture:before {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* Black Color Overlay */
-    content: "";
-    opacity: 0.7;
-    display: block;
-    background: #000;
-    height: 100%;
-    width: 100%;
-    /* prevents the cursor from interacting with it */
-    pointer-events: none;
-  }
-  #hero .cs-container {
+  .cs-container {
+    display: flex;
     position: relative;
     margin: auto;
     max-width: 80em;
     width: 100%;
-    /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-    /* 144px - 280px - leaving extra space for the navigation */
-    /* changes on tablet */
-    padding: clamp(9em, 25.95vw, 17.5em) 0;
+    align-items: center;
   }
-  #hero .cs-container:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* Left Line */
-    content: "";
-    opacity: 1;
-    display: block;
-    background: -moz-linear-gradient(top, rgba(250, 251, 252, 0.5) 0%, rgba(250, 251, 252, 0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(250, 251, 252, 0.5) 0%, rgba(250, 251, 252, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-    height: 100%;
-    width: 1px;
+  .hero-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  #hero .cs-flex-group {
+  .cs-flex-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     margin: auto;
-    /* 60px - 220px */
-    margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
     /* 464px - 562px */
-    max-width: clamp(29em, 60vw, 35.125em);
-    width: 80vw;
+    max-width: clamp(23em, 60vw, 35.125em);
+    width: 90vw;
     box-sizing: border-box;
   }
-  #hero .cs-topper {
-    margin-bottom: 1rem;
-    color: var(--primary);
-    text-align: center;
-  }
-  #hero .cs-title {
+  .cs-title {
     width: 100%;
     color: var(--bodyTextColorWhite);
     text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
   }
-  #hero .cs-text {
+  .cs-title.sky {
+    text-shadow: black 0px 0px 3px;
+  }
+  .cs-text {
     /* 32px - 40px */
     margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
     /* 40px - 48px */
     margin-bottom: clamp(2.5rem, 4vw, 3rem);
+    font-size: 22px;
     color: var(--bodyTextColorWhite);
     text-align: center;
   }
-  #hero .cs-button-solid {
+  .cs-text.sky {
+    text-shadow: black 0px 0px 3px;
+  }
+  .cs-button-solid {
     margin-bottom: 1rem;
     height: initial;
     line-height: clamp(2.875em, 5.5vw, 3.5em);
   }
-  #hero .cs-button-transparent {
-    z-index: 1;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--bodyTextColorWhite);
-    margin: 0 0.5rem;
-    background-color: transparent;
-    /* 46px - 56px */
-    height: clamp(2.875em, 5.5vw, 3.5em);
-    width: 11.25rem;
-    box-sizing: border-box;
-    padding: 0;
-    text-decoration: none;
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-    font-weight: 700;
-    color: #fff;
+  .hero-mockup {
+    max-width: clamp(10em, 90%, 500px);
+    margin-top: 20px;
   }
-  #hero .cs-button-transparent .cs-img {
-    display: block;
-    margin-right: 0.75rem;
-  }
-  #hero .cs-button-transparent:before {
-    z-index: -1;
+  .hero-svg {
     position: absolute;
-    /* so it sits on top of the border */
-    top: -1px;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    content: "";
-    opacity: 1;
-    /* this is what creates the grow affect on hover */
-    transform: scaleX(0);
-    display: block;
-    background: #000;
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-  #hero .cs-button-transparent:hover:before {
-    transform: scaleX(1);
+    bottom: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 100%; /* Or set a specific width */
+    height: auto; /* Maintain aspect ratio */
+    z-index: -1; /* Place it behind the content if needed */
   }
 }
 /* Tablet - 768px */
@@ -162,137 +93,638 @@
     padding: 0 clamp(2em, 5vw, 2.5em);
   }
   #hero .cs-container {
-    padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    display: flex;
   }
-  #hero .cs-container:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    /* Right Line */
-    content: "";
-    opacity: 1;
-    display: block;
-    background: -moz-linear-gradient(top, rgba(250, 251, 252, 0) 0%, rgba(250, 251, 252, 0.5) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(250, 251, 252, 0) 0%, rgba(250, 251, 252, 0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-    height: 100%;
-    width: 1px;
+  #hero .cs-container .cs-title {
+    font-size: 60px;
+    max-width: 500px;
+  }
+  #hero .cs-flex-group {
+    max-width: 500px;
   }
   #hero .cs-button-solid {
     margin-right: 1.25rem;
     margin-bottom: 0;
   }
 }
-/* Desktop Parallax Effect - 1300px */
-@media only screen and (min-width: 81.25em) {
-  #hero {
-    background: url("/assets/images/landing.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* creates parallax effect on background image */
-    background-attachment: fixed;
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  .hero-items {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .cs-flex-group {
+    justify-content: left;
+  }
+  .cs-text {
+    text-align: left;
+  }
+  .cs-title {
+    text-align: left;
+  }
+  .hero-mockup {
+    width: 50%;
+    max-width: none;
+    margin-top: 0px;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #hero .cs-background:before {
-    opacity: 0.8;
+  body.dark-mode #hero {
+    background: rgb(0, 0, 0);
   }
-}
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0rem) {
-  .services {
-    z-index: 100;
-    position: relative;
-    border-top: 0.375em solid var(--primary);
-    border-radius: 0.3125em;
-    margin: auto;
-    margin-top: -10.4375em;
-    margin-bottom: 3.125em;
-    background: #fff;
-    max-width: 82.5em;
-    width: 90%;
-    padding: 3.125em 1.25em;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+  body.dark-mode #hero .hero-svg {
+    display: none;
   }
-  .services .card {
+  body.dark-mode #hero .hero-svg.black {
     display: block;
-    margin: auto;
-    margin-bottom: 3.125em;
-    max-width: 22.3125em;
+  }
+  body.dark-mode #hero .cloud-space {
+    display: none;
+  }
+  body.dark-mode #hero .star-space {
+    display: block;
+  }
+  body.dark-mode #hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
-  .services .card picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 1.4375em;
-    background: var(--primary);
-    height: 5.5em;
-    width: 5.5em;
-  }
-  .services .card picture img {
-    height: 3em;
-    width: 3em;
-  }
-  .services .card h2 {
-    margin-bottom: 0.65em;
-    font-size: 2em;
-    line-height: 1.35em;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-align: center;
-  }
-  .services .card p {
-    opacity: 0.7;
-    width: 100%;
-    line-height: 1.3333333333em;
-    text-align: center;
-  }
-  .services .card:last-of-type {
-    margin-bottom: 0;
+    height: 100%;
+    background: linear-gradient(139deg, rgba(1, 14, 129, 0.2) 0%, rgba(58, 217, 255, 0.2) 80%);
+    z-index: -1; /* Make sure the pseudo-element is behind other content */
   }
 }
-/* Inbetween */
-@media only screen and (min-width: 768px) {
-  .services {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 98%;
-    font-size: min(1.8vw, 1em);
+/* Clouds */
+/* Utility mixins for cross-browser compatibility */
+@keyframes clouds {
+  from {
+    transform: translateX(0);
   }
-  .services .card {
-    margin: 0;
-    max-width: 20.3125em;
+  to {
+    transform: translateX(100%);
   }
 }
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  .services {
-    padding: 3.125em 5em;
+@-webkit-keyframes clouds {
+  from {
+    transform: translateX(0);
   }
-  .services .card {
-    max-width: 22.3125em;
+  to {
+    transform: translateX(100%);
   }
 }
-/* Dark mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #services {
-    background: var(--medium);
+/* Cloud Space Container */
+.cloud-space {
+  position: absolute; /* Position relative to the #hero section */
+  top: 0px;
+  left: 0px;
+  width: 2000px; /* Span full width of the hero */
+  height: 100%; /* Span full height of the hero */
+  z-index: -100; /* Place behind the content of #hero */
+  white-space: nowrap;
+}
+
+.clouds.left {
+  position: relative;
+  left: -200%;
+}
+
+.cloud-wrapper {
+  animation: clouds 20s infinite linear;
+  -webkit-animation: clouds 20s infinite linear;
+}
+
+.clouds {
+  display: inline-block;
+  width: 100%;
+}
+
+.cloud {
+  z-index: -100;
+  border-radius: 10px;
+  position: relative;
+  margin: 33px 0 0 0;
+  width: 54px;
+  height: 5px;
+  background: #f7e7eb;
+}
+.cloud.tiny {
+  transform: scale(0.5);
+}
+.cloud.small {
+  transform: scale(1);
+}
+.cloud.normal {
+  transform: scale(2);
+}
+.cloud.large {
+  transform: scale(4);
+}
+.cloud div {
+  box-shadow: inset -2px -3px 0 0 #f7e7eb;
+  position: absolute;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  left: -3px;
+  bottom: 0;
+  background: #fafbf0;
+  z-index: 10;
+}
+.cloud div:first-child + div {
+  transform: scale(1.6);
+  margin: 0 0 4px 13px;
+  z-index: 9;
+}
+.cloud div:first-child + div + div {
+  transform: scale(2.4);
+  margin: 0 0 9px 32px;
+  z-index: 8;
+}
+.cloud div:first-child + div + div + div {
+  transform: scale(1.3);
+  margin: 0 0 2px 50px;
+  z-index: 7;
+}
+
+.cloud-1 {
+  left: 200px;
+  top: 150px;
+  /*     background-color: blue;
+  */
+}
+
+.cloud-2 {
+  top: 500px;
+  left: -240px;
+  /*     background-color: red;
+  */
+}
+
+.cloud-3 {
+  left: -750px;
+  top: 360px;
+  /*     background-color: green;
+  */
+}
+
+.cloud-4 {
+  left: 500px;
+  top: 260px;
+  /*     background-color: black;
+  */
+}
+
+.cloud-5 {
+  left: -600px;
+  top: 30px;
+  /*     background-color: khaki;
+  */
+}
+
+.cloud-6 {
+  left: 630px;
+  /*     background-color: white;
+  */
+}
+
+/* Stars */
+/* Twinkle animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
   }
-  body.dark-mode #services picture {
-    background: var(--primaryDark);
+  50% {
+    opacity: 1;
   }
-  body.dark-mode #services h2 {
-    font-weight: bold;
-    color: #fff;
+}
+.star-space {
+  position: absolute; /* Position relative to the #hero section */
+  top: 0;
+  left: 0;
+  width: 100%; /* Span full width of the hero */
+  height: 100%; /* Span full height of the hero */
+  z-index: -100; /* Place behind the content of #hero */
+}
+
+.star {
+  position: absolute;
+  opacity: 0.8; /* Slight opacity to make stars a bit faded */
+  animation: twinkle 4s infinite;
+}
+
+/* Position stars using nth-child */
+.star:nth-child(1) {
+  top: 10%;
+  left: 15%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(2) {
+  top: 20%;
+  left: 30%;
+  transform: scale(1);
+}
+
+.star:nth-child(3) {
+  top: 35%;
+  left: 50%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(4) {
+  top: 50%;
+  left: 70%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(5) {
+  top: 60%;
+  left: 80%;
+  transform: scale(1);
+}
+
+.star:nth-child(6) {
+  top: 75%;
+  left: 10%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(7) {
+  top: 80%;
+  left: 40%;
+  transform: scale(2);
+}
+
+.star:nth-child(8) {
+  top: 90%;
+  left: 60%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(9) {
+  top: 25%;
+  left: 90%;
+  transform: scale(1);
+}
+
+.star:nth-child(10) {
+  top: 5%;
+  left: 5%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(11) {
+  top: 15%;
+  left: 50%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(12) {
+  top: 22%;
+  left: 10%;
+  transform: scale(1);
+}
+
+.star:nth-child(13) {
+  top: 45%;
+  left: 25%;
+  transform: scale(2);
+}
+
+.star:nth-child(14) {
+  top: 55%;
+  left: 45%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(15) {
+  top: 65%;
+  left: 60%;
+  transform: scale(1);
+}
+
+.star:nth-child(16) {
+  top: 72%;
+  left: 85%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(17) {
+  top: 88%;
+  left: 15%;
+  transform: scale(2);
+}
+
+.star:nth-child(18) {
+  top: 95%;
+  left: 40%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(19) {
+  top: 18%;
+  left: 70%;
+  transform: scale(1);
+}
+
+.star:nth-child(20) {
+  top: 22%;
+  left: 85%;
+  transform: scale(2);
+}
+
+.star:nth-child(21) {
+  top: 12%;
+  left: 35%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(22) {
+  top: 40%;
+  left: 80%;
+  transform: scale(1);
+}
+
+.star:nth-child(23) {
+  top: 58%;
+  left: 5%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(24) {
+  top: 78%;
+  left: 55%;
+  transform: scale(2);
+}
+
+.star:nth-child(25) {
+  top: 10%;
+  left: 90%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(26) {
+  top: 15%;
+  left: 95%;
+  transform: scale(1);
+}
+
+.star:nth-child(27) {
+  top: 30%;
+  left: 95%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(28) {
+  top: 20%;
+  left: 81%;
+  transform: scale(2);
+}
+
+.star:nth-child(29) {
+  top: 24%;
+  left: 84%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(30) {
+  top: 4%;
+  left: 3%;
+  transform: scale(1);
+}
+
+.star:nth-child(31) {
+  top: 11%;
+  left: 5%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(32) {
+  top: 28%;
+  left: 2%;
+  transform: scale(2);
+}
+
+.star:nth-child(33) {
+  top: 57%;
+  left: 33%;
+  transform: scale(1.5);
+}
+
+.star:nth-child(34) {
+  top: 54%;
+  left: 28%;
+  transform: scale(1);
+}
+
+.star:nth-child(35) {
+  top: 64%;
+  left: 24%;
+  transform: scale(0.5);
+}
+
+.star:nth-child(36) {
+  top: 65%;
+  left: 25%;
+  transform: scale(1.5);
+}
+
+/* Add truly random animation delays */
+.star:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.star:nth-child(2) {
+  animation-delay: 3.2s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+.star:nth-child(4) {
+  animation-delay: 2.6s;
+}
+
+.star:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.star:nth-child(6) {
+  animation-delay: 3.9s;
+}
+
+.star:nth-child(7) {
+  animation-delay: 2.1s;
+}
+
+.star:nth-child(8) {
+  animation-delay: 1.7s;
+}
+
+.star:nth-child(9) {
+  animation-delay: 0.6s;
+}
+
+.star:nth-child(10) {
+  animation-delay: 3.3s;
+}
+
+.star:nth-child(11) {
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(12) {
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(13) {
+  animation-delay: 2.8s;
+}
+
+.star:nth-child(14) {
+  animation-delay: 3.1s;
+}
+
+.star:nth-child(15) {
+  animation-delay: 1.3s;
+}
+
+.star:nth-child(16) {
+  animation-delay: 0.9s;
+}
+
+.star:nth-child(17) {
+  animation-delay: 3.7s;
+}
+
+.star:nth-child(18) {
+  animation-delay: 2.4s;
+}
+
+.star:nth-child(19) {
+  animation-delay: 0.3s;
+}
+
+.star:nth-child(20) {
+  animation-delay: 3.5s;
+}
+
+.star:nth-child(21) {
+  animation-delay: 1.9s;
+}
+
+.star:nth-child(22) {
+  animation-delay: 0.4s;
+}
+
+.star:nth-child(23) {
+  animation-delay: 2.6s;
+}
+
+.star:nth-child(24) {
+  animation-delay: 1.2s;
+}
+
+.star:nth-child(25) {
+  animation-delay: 3s;
+}
+
+.star:nth-child(26) {
+  animation-delay: 0.7s;
+}
+
+.star:nth-child(27) {
+  animation-delay: 3.4s;
+}
+
+.star:nth-child(28) {
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(29) {
+  animation-delay: 0.2s;
+}
+
+.star:nth-child(30) {
+  animation-delay: 2.9s;
+}
+
+.star:nth-child(31) {
+  animation-delay: 1.5s;
+}
+
+.star:nth-child(32) {
+  animation-delay: 0.6s;
+}
+
+.star:nth-child(33) {
+  animation-delay: 2.3s;
+}
+
+.star:nth-child(34) {
+  animation-delay: 3.8s;
+}
+
+.star:nth-child(35) {
+  animation-delay: 0.9s;
+}
+
+.star:nth-child(36) {
+  animation-delay: 1.1s;
+}
+
+/* Shooting star */
+.shooting-star-space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Prevent interference with other elements */
+}
+
+/* Shooting star style */
+.shooting-star {
+  position: absolute;
+  top: -100px; /* Start above the viewport */
+  left: 40%; /* Start to the left of the viewport */
+  width: 2px; /* Thin star trail */
+  height: 75px; /* Length of the trail */
+  transform: rotate(315deg);
+  background: linear-gradient(to top left, rgb(255, 255, 255), rgba(255, 255, 255, 0)); /* Adjusted trail direction */
+  animation: shootingStar 12s linear infinite;
+  animation-delay: 5s; /* 3-second delay before the animation starts and resets */
+  opacity: 0; /* Start invisible */
+}
+
+/* Shooting star animation */
+@keyframes shootingStar {
+  0% {
+    transform: translate(0, 0) rotate(315deg); /* Start position */
+    opacity: 0.5; /* Almost fully visible */
   }
+  2% {
+    transform: translate(400px, 400px) rotate(315deg); /* End position */
+    opacity: 0; /* Fade out */
+  }
+  100% {
+    opacity: 0; /* Fully invisible during the pause */
+  }
+}
+.shooting-star:nth-child(2) {
+  left: 50%;
+  animation-delay: 6s;
+}
+
+.shooting-star:nth-child(3) {
+  left: -5%;
+  animation-delay: 12s;
 }
 
 /*# sourceMappingURL=critical.css.map */
