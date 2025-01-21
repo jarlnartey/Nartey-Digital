@@ -5,6 +5,8 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #hero {
+    display: flex;
+    height: 100dvh;
     z-index: 1;
     overflow: hidden;
     background: rgb(0, 60, 121);
@@ -29,9 +31,11 @@
     max-width: 80em;
     width: 100%;
     align-items: center;
+    justify-content: center;
   }
   .hero-items {
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
   }
@@ -79,7 +83,7 @@
   }
   .hero-svg {
     position: absolute;
-    bottom: 0; /* Adjust as needed */
+    bottom: 0px; /* Adjust as needed */
     left: 0; /* Adjust as needed */
     width: 100%; /* Or set a specific width */
     height: auto; /* Maintain aspect ratio */
